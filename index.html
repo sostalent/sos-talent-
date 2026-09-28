@@ -3,71 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOS Talent</title>
+
+    <title>SOS Talent | Tu próxima oportunidad</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f8f7f4;
-            color: #333;
+            background: #faf9f6;
+            color: #26332f;
         }
 
         header {
-            background: white;
-            padding: 25px 8%;
+            background: #ffffff;
+            padding: 20px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #eeeeee;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .logo {
-            font-size: 28px;
+            font-size: 27px;
             font-weight: bold;
-            color: #2f5d50;
+            color: #315d50;
+            letter-spacing: 1px;
         }
 
         nav a {
-            margin-left: 20px;
+            margin-left: 22px;
             text-decoration: none;
-            color: #333;
+            color: #39433f;
+            font-size: 15px;
         }
 
         .hero {
-            text-align: center;
-            padding: 90px 8%;
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            padding: 80px 7%;
+            background: #eef3ef;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .small-title {
+            color: #315d50;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
         }
 
         .hero h1 {
-            font-size: 45px;
-            color: #2f5d50;
+            font-size: 56px;
+            line-height: 1.08;
+            margin: 18px 0;
+            color: #274d43;
         }
 
         .hero p {
             font-size: 20px;
-            line-height: 1.6;
-            max-width: 650px;
-            margin: auto;
+            line-height: 1.7;
+            max-width: 620px;
+            color: #53615c;
+        }
+
+        .buttons {
+            margin-top: 35px;
         }
 
         .button {
             display: inline-block;
-            margin-top: 30px;
-            padding: 15px 30px;
-            background: #2f5d50;
-            color: white;
-            text-decoration: none;
+            padding: 15px 25px;
+            margin-right: 12px;
+            margin-bottom: 10px;
             border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .services {
+        .primary {
+            background: #315d50;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #315d50;
+            color: #315d50;
             background: white;
-            padding: 60px 8%;
         }
 
-        .services h2 {
+        .section {
+            padding: 80px 7%;
+        }
+
+        .section-title {
             text-align: center;
-            color: #2f5d50;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #274d43;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #68736f;
+            line-height: 1.7;
         }
 
         .cards {
@@ -75,26 +129,86 @@
             justify-content: center;
             gap: 25px;
             flex-wrap: wrap;
-            margin-top: 40px;
         }
 
         .card {
-            width: 280px;
-            padding: 30px;
-            background: #f8f7f4;
-            border-radius: 12px;
-            text-align: center;
+            background: white;
+            width: 300px;
+            padding: 32px;
+            border-radius: 14px;
+            border: 1px solid #eeeeee;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
         }
 
         .card h3 {
-            color: #2f5d50;
+            color: #315d50;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #68736f;
+            line-height: 1.7;
+        }
+
+        .about {
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #596560;
+        }
+
+        .contact {
+            background: #eef3ef;
+            text-align: center;
         }
 
         footer {
-            text-align: center;
-            padding: 30px;
-            background: #2f5d50;
+            background: #274d43;
             color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 18px 5%;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 70px 7%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section {
+                padding: 60px 7%;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
         }
     </style>
 </head>
@@ -102,63 +216,158 @@
 <body>
 
 <header>
+
     <div class="logo">SOS Talent</div>
 
     <nav>
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
     </nav>
+
 </header>
 
+
 <section class="hero" id="inicio">
-    <h1>Tu próxima oportunidad comienza aquí.</h1>
 
-    <p>
-        Conectamos talento con oportunidades y ayudamos a empresas
-        y profesionales a encontrar el camino adecuado para crecer.
-    </p>
+    <div class="hero-content">
 
-    <a href="#servicios" class="button">
-        Conoce nuestros servicios
-    </a>
+        <div class="small-title">
+            Talento · Oportunidades · Crecimiento
+        </div>
+
+        <h1>
+            Tu próxima oportunidad comienza aquí.
+        </h1>
+
+        <p>
+            Conectamos personas con oportunidades y ayudamos a las empresas
+            a encontrar y desarrollar el talento que necesitan.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#servicios" class="button primary">
+                Soy profesional
+            </a>
+
+            <a href="#contacto" class="button secondary">
+                Soy empresa
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 
-<section class="services" id="servicios">
 
-    <h2>¿Cómo podemos ayudarte?</h2>
+<section class="section" id="servicios">
+
+    <div class="section-title">
+
+        <h2>¿En qué podemos ayudarte?</h2>
+
+        <p>
+            Soluciones pensadas para profesionales que buscan crecer
+            y empresas que quieren fortalecer sus equipos.
+        </p>
+
+    </div>
+
 
     <div class="cards">
 
         <div class="card">
-            <h3>Para quienes buscan trabajo</h3>
+
+            <h3>Para profesionales</h3>
+
             <p>
                 Orientación para mejorar tu perfil profesional,
-                prepararte para oportunidades y encontrar tu próximo paso.
+                prepararte para nuevas oportunidades y definir
+                tu próximo paso.
             </p>
+
         </div>
 
+
         <div class="card">
+
             <h3>Para empresas</h3>
+
             <p>
-                Apoyo en búsqueda de talento y soluciones para
-                fortalecer sus equipos.
+                Apoyo en búsqueda de talento y soluciones
+                enfocadas en las necesidades de tu organización.
             </p>
+
         </div>
 
+
         <div class="card">
+
             <h3>Consultoría</h3>
+
             <p>
                 Asesoría en recursos humanos, desarrollo profesional
-                y estrategias de talento.
+                y estrategias relacionadas con el talento.
             </p>
+
         </div>
 
     </div>
+
 </section>
 
-<footer id="contacto">
+
+<section class="section about" id="nosotros">
+
+    <div class="section-title">
+
+        <h2>Más que encontrar un trabajo</h2>
+
+    </div>
+
+    <p class="about-text">
+
+        En SOS Talent creemos que una oportunidad profesional puede
+        ser el comienzo de una nueva etapa. Por eso conectamos talento,
+        experiencia y oportunidades de una manera cercana, práctica
+        y humana.
+
+    </p>
+
+</section>
+
+
+<section class="section contact" id="contacto">
+
+    <div class="section-title">
+
+        <h2>¿Hablamos?</h2>
+
+        <p>
+            Si estás buscando una nueva oportunidad o necesitas
+            encontrar talento para tu empresa, queremos conocerte.
+        </p>
+
+        <a href="mailto:contacto@sostalent.com" class="button primary">
+            Contáctanos
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p><strong>SOS Talent</strong></p>
+
+    <p>Conectando talento con oportunidades.</p>
+
     <p>© 2026 SOS Talent</p>
+
 </footer>
 
 </body>
