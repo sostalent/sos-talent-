@@ -8,6 +8,16 @@
 
 <style>
 
+:root {
+    --black: #111111;
+    --black2: #191919;
+    --gold: #D9B44A;
+    --gold2: #F1D477;
+    --white: #FFFFFF;
+    --gray: #CFCFCF;
+    --darkgray: #888888;
+}
+
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -16,101 +26,75 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #111111;
-    color: #ffffff;
+    background: var(--black);
+    color: var(--white);
 }
 
-/* =========================
-   COLORES SOS TALENT
-========================= */
-
-:root {
-    --black: #111111;
-    --dark: #181818;
-    --gold: #D9B44A;
-    --gold-light: #F0D477;
-    --white: #ffffff;
-    --gray: #cfcfcf;
-}
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    background: rgba(17,17,17,0.97);
+    background: rgba(17,17,17,0.98);
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
-    padding: 18px 7%;
+    padding: 15px 7%;
 
     border-bottom: 1px solid #292929;
 }
-
-/* LOGO */
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
 
+    color: white;
     text-decoration: none;
-    color: var(--white);
 
-    font-size: 25px;
+    font-size: 24px;
     font-weight: bold;
-
-    letter-spacing: 1px;
 }
 
 .logo-symbol {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
 
     border: 2px solid var(--gold);
+    border-radius: 50%;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     color: var(--gold);
 
-    font-size: 15px;
+    font-size: 11px;
     font-weight: bold;
-
-    border-radius: 50%;
 }
 
 .logo span {
     color: var(--gold);
 }
 
-/* NAV */
-
 nav a {
     color: white;
     text-decoration: none;
 
-    margin-left: 22px;
+    margin-left: 18px;
 
-    font-size: 14px;
-
-    transition: 0.3s;
+    font-size: 13px;
 }
 
 nav a:hover {
     color: var(--gold);
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
     min-height: 680px;
@@ -122,15 +106,15 @@ nav a:hover {
 
     background:
         radial-gradient(
-            circle at 80% 40%,
-            rgba(217,180,74,0.13),
+            circle at 85% 40%,
+            rgba(217,180,74,.16),
             transparent 35%
         ),
-        #111111;
+        var(--black);
 }
 
 .hero-content {
-    max-width: 820px;
+    max-width: 850px;
 }
 
 .eyebrow {
@@ -141,15 +125,13 @@ nav a:hover {
 
     letter-spacing: 3px;
     text-transform: uppercase;
-
-    margin-bottom: 20px;
 }
 
 .hero h1 {
     font-size: 60px;
     line-height: 1.05;
 
-    margin: 0 0 25px;
+    margin: 20px 0;
 
     color: white;
 }
@@ -159,7 +141,7 @@ nav a:hover {
 }
 
 .hero p {
-    max-width: 680px;
+    max-width: 700px;
 
     color: var(--gray);
 
@@ -174,18 +156,15 @@ nav a:hover {
 .button {
     display: inline-block;
 
-    padding: 15px 27px;
+    padding: 15px 25px;
+
+    margin: 5px 8px 5px 0;
 
     border-radius: 5px;
 
     text-decoration: none;
 
     font-weight: bold;
-
-    margin-right: 10px;
-    margin-bottom: 10px;
-
-    transition: 0.3s;
 }
 
 .gold-button {
@@ -194,13 +173,12 @@ nav a:hover {
 }
 
 .gold-button:hover {
-    background: var(--gold-light);
+    background: var(--gold2);
 }
 
 .outline-button {
     border: 1px solid var(--gold);
     color: var(--gold);
-    background: transparent;
 }
 
 .outline-button:hover {
@@ -208,320 +186,272 @@ nav a:hover {
     color: #111111;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* SECTIONS */
 
 .section {
-    padding: 90px 7%;
+    padding: 85px 7%;
 }
 
 .dark {
-    background: #181818;
+    background: var(--black2);
 }
 
 .black {
-    background: #111111;
+    background: var(--black);
 }
 
 .white {
-    background: #ffffff;
+    background: white;
     color: #111111;
 }
 
 .section-title {
     max-width: 750px;
-
+    margin: 0 auto 50px;
     text-align: center;
-
-    margin: 0 auto 55px;
 }
 
 .section-title h2 {
     color: var(--gold);
-
     font-size: 38px;
-
     margin-bottom: 15px;
 }
 
 .section-title p {
-    color: #bdbdbd;
-
+    color: var(--gray);
     line-height: 1.7;
-
     font-size: 17px;
 }
 
-.white .section-title p {
-    color: #555555;
-}
-
-/* =========================
-   CARDS
-========================= */
+/* CARDS */
 
 .cards {
     display: flex;
-
     justify-content: center;
-
     gap: 25px;
-
     flex-wrap: wrap;
 }
 
 .card {
-    width: 310px;
+    width: 300px;
 
-    padding: 35px;
+    padding: 32px;
 
     background: #222222;
 
     border: 1px solid #333333;
 
     border-radius: 10px;
-
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-
-    border-color: var(--gold);
 }
 
 .card-icon {
-    font-size: 35px;
-
-    margin-bottom: 15px;
+    color: var(--gold);
+    font-size: 32px;
 }
 
 .card h3 {
     color: var(--gold);
-
-    font-size: 21px;
 }
 
 .card p {
-    color: #c8c8c8;
-
+    color: var(--gray);
     line-height: 1.7;
 }
 
-/* =========================
-   PROFESIONALES / EMPRESAS
-========================= */
+/* TWO COLUMNS */
 
 .two-column {
     display: flex;
-
     justify-content: center;
-
     gap: 30px;
-
     flex-wrap: wrap;
 }
 
 .info-box {
-    width: 460px;
+    width: 430px;
 
-    padding: 45px;
+    padding: 40px;
 
-    border-radius: 10px;
-
-    background: #222222;
+    background: #202020;
 
     border: 1px solid #333333;
+
+    border-radius: 10px;
 }
 
 .info-box h3 {
     color: var(--gold);
-
     font-size: 27px;
 }
 
-.info-box p {
-    color: #cccccc;
-
+.info-box p,
+.info-box li {
+    color: var(--gray);
     line-height: 1.8;
-}
-
-.info-box ul {
-    padding-left: 20px;
-
-    color: #cccccc;
-
-    line-height: 2;
 }
 
 .info-box li::marker {
     color: var(--gold);
 }
 
-/* =========================
-   SOBRE NOSOTROS
-========================= */
-
-.about {
-    max-width: 850px;
-
-    margin: auto;
-
-    text-align: center;
-}
-
-.about h2 {
-    color: var(--gold);
-
-    font-size: 38px;
-}
-
-.about p {
-    color: #555555;
-
-    font-size: 18px;
-
-    line-height: 1.9;
-}
-
-/* =========================
-   FORMULARIOS
-========================= */
+/* FORMS */
 
 .form-container {
-    max-width: 850px;
+    width: 500px;
 
-    margin: auto;
+    padding: 35px;
 
-    background: #1d1d1d;
-
-    padding: 40px;
-
-    border-radius: 12px;
+    background: #202020;
 
     border: 1px solid #333333;
+
+    border-radius: 10px;
 }
 
 .form-container h3 {
     color: var(--gold);
 
-    font-size: 26px;
+    font-size: 25px;
 
     text-align: center;
-
-    margin-top: 0;
 }
 
-.form-container p {
+.form-container > p {
+    color: var(--gray);
+
     text-align: center;
 
-    color: #bdbdbd;
-
-    margin-bottom: 35px;
+    line-height: 1.6;
 }
 
 .form-row {
     display: flex;
-
-    gap: 20px;
+    gap: 15px;
 }
 
 .form-group {
     flex: 1;
-
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 label {
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
-    color: #ffffff;
+    color: white;
 
     font-size: 14px;
 }
 
 input,
-textarea,
-select {
+select,
+textarea {
     width: 100%;
 
-    padding: 14px;
+    padding: 13px;
 
     background: #111111;
 
     color: white;
 
-    border: 1px solid #3b3b3b;
+    border: 1px solid #444444;
 
     border-radius: 5px;
 
-    font-size: 15px;
-
-    outline: none;
+    font-size: 14px;
 }
 
 input:focus,
-textarea:focus,
-select:focus {
+select:focus,
+textarea:focus {
+    outline: none;
     border-color: var(--gold);
 }
 
 textarea {
-    min-height: 130px;
-
+    min-height: 120px;
     resize: vertical;
+}
+
+.file-note {
+    color: var(--darkgray);
+    font-size: 12px;
+    margin-top: 5px;
 }
 
 .submit-button {
     width: 100%;
 
-    border: none;
-
-    padding: 16px;
+    padding: 15px;
 
     background: var(--gold);
 
     color: #111111;
 
-    font-weight: bold;
+    border: none;
+
+    border-radius: 5px;
 
     font-size: 16px;
 
-    border-radius: 5px;
+    font-weight: bold;
 
     cursor: pointer;
 }
 
 .submit-button:hover {
-    background: var(--gold-light);
+    background: var(--gold2);
 }
 
-/* =========================
-   CONTACTO
-========================= */
+.privacy {
+    color: #888888;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    margin-top: 15px;
+}
+
+/* ABOUT */
+
+.about {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about h2 {
+    color: var(--gold);
+    font-size: 38px;
+}
+
+.about p {
+    color: #555555;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* CONTACT */
 
 .contact {
     text-align: center;
-
-    background: #181818;
 }
 
 .contact-email {
+    display: inline-block;
+
+    margin-top: 15px;
+
     color: var(--gold);
 
     font-size: 20px;
 
-    text-decoration: none;
-
     font-weight: bold;
-}
 
-/* =========================
-   REDES SOCIALES
-========================= */
+    text-decoration: none;
+}
 
 .socials {
     margin-top: 30px;
@@ -530,37 +460,32 @@ textarea {
 .social-button {
     display: inline-block;
 
-    border: 1px solid #555555;
-
-    color: white;
-
     padding: 12px 20px;
 
     margin: 5px;
 
+    border: 1px solid #444444;
+
     border-radius: 5px;
 
-    text-decoration: none;
+    color: white;
 
-    transition: 0.3s;
+    text-decoration: none;
 }
 
 .social-button:hover {
-    border-color: var(--gold);
-
     color: var(--gold);
+    border-color: var(--gold);
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     background: #080808;
 
-    padding: 40px 20px;
-
     text-align: center;
+
+    padding: 35px 20px;
 
     border-top: 1px solid #292929;
 }
@@ -570,39 +495,33 @@ footer strong {
 }
 
 footer p {
-    color: #aaaaaa;
-
-    margin: 7px;
+    color: #888888;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
     header {
-        padding: 15px 5%;
+        padding: 13px 5%;
     }
 
     .logo {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .logo-symbol {
         width: 32px;
         height: 32px;
-        font-size: 12px;
     }
 
     nav a {
-        margin-left: 8px;
-        font-size: 11px;
+        margin-left: 7px;
+        font-size: 10px;
     }
 
     .hero {
         min-height: 620px;
-
         padding: 70px 7%;
     }
 
@@ -619,17 +538,13 @@ footer p {
     }
 
     .section-title h2 {
-        font-size: 31px;
+        font-size: 30px;
     }
 
-    .info-box {
-        width: 100%;
-
-        padding: 30px;
-    }
-
+    .info-box,
     .form-container {
-        padding: 25px 20px;
+        width: 100%;
+        padding: 28px 22px;
     }
 
     .form-row {
@@ -638,49 +553,24 @@ footer p {
 
 }
 
-/* =========================
-   SMALL ANIMATION
-========================= */
-
-@keyframes fadeUp {
-
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-.hero-content {
-    animation: fadeUp 0.8s ease;
-}
-
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
 
 <a href="#inicio" class="logo">
 
-    <div class="logo-symbol">
-        SOS
-    </div>
+<div class="logo-symbol">
+SOS
+</div>
 
-    SOS <span>Talent</span>
+SOS <span>Talent</span>
 
 </a>
 
@@ -703,9 +593,7 @@ footer p {
 
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero" id="inicio">
 
@@ -729,23 +617,26 @@ comienza aquí.
 
 <p>
 
-Conectamos talento con oportunidades y ayudamos a empresas
-a encontrar, desarrollar y potenciar las personas que hacen
-crecer sus equipos.
+Conectamos personas con oportunidades y ayudamos a empresas
+a encontrar y desarrollar el talento que necesitan.
 
 </p>
 
 
 <div class="buttons">
 
-<a href="#profesionales" class="button gold-button">
+<a
+href="#profesionales"
+class="button gold-button">
 
-Estoy buscando oportunidades
+Busco oportunidades
 
 </a>
 
 
-<a href="#empresas" class="button outline-button">
+<a
+href="#empresas"
+class="button outline-button">
 
 Soy empresa
 
@@ -759,22 +650,18 @@ Soy empresa
 
 
 
-<!-- =========================
-     SERVICIOS
-========================= -->
+<!-- SERVICIOS -->
 
 <section class="section dark" id="servicios">
 
 <div class="section-title">
 
 <h2>
-Lo que hacemos
+Nuestros servicios
 </h2>
 
 <p>
-
-Soluciones enfocadas en personas, talento y empresas.
-
+Soluciones para profesionales y empresas.
 </p>
 
 </div>
@@ -785,9 +672,7 @@ Soluciones enfocadas en personas, talento y empresas.
 
 <div class="card">
 
-<div class="card-icon">
-✦
-</div>
+<div class="card-icon">✦</div>
 
 <h3>
 Desarrollo profesional
@@ -795,20 +680,18 @@ Desarrollo profesional
 
 <p>
 
-Te ayudamos a fortalecer tu perfil profesional,
-prepararte para oportunidades y avanzar con mayor claridad.
+Orientación para fortalecer tu perfil,
+prepararte para oportunidades y avanzar
+en tu carrera.
 
 </p>
 
 </div>
 
 
-
 <div class="card">
 
-<div class="card-icon">
-◆
-</div>
+<div class="card-icon">◆</div>
 
 <h3>
 Búsqueda de talento
@@ -816,20 +699,17 @@ Búsqueda de talento
 
 <p>
 
-Ayudamos a empresas a identificar personas
-que puedan aportar valor real a sus equipos.
+Apoyo a empresas para identificar talento
+y conectar con profesionales.
 
 </p>
 
 </div>
 
 
-
 <div class="card">
 
-<div class="card-icon">
-✧
-</div>
+<div class="card-icon">✧</div>
 
 <h3>
 Consultoría
@@ -837,8 +717,8 @@ Consultoría
 
 <p>
 
-Orientación en recursos humanos, talento,
-desarrollo profesional y estrategias organizacionales.
+Asesoría en recursos humanos, talento,
+desarrollo y estrategias organizacionales.
 
 </p>
 
@@ -851,9 +731,7 @@ desarrollo profesional y estrategias organizacionales.
 
 
 
-<!-- =========================
-     PROFESIONALES
-========================= -->
+<!-- PROFESIONALES -->
 
 <section class="section black" id="profesionales">
 
@@ -865,8 +743,8 @@ desarrollo profesional y estrategias organizacionales.
 
 <p>
 
-Tu experiencia tiene valor. Vamos a trabajar para que
-pueda ser vista y conectada con nuevas posibilidades.
+Cuéntanos sobre ti y déjanos conocer el tipo
+de oportunidad que estás buscando.
 
 </p>
 
@@ -883,19 +761,16 @@ Para profesionales
 </h3>
 
 <p>
-
-SOS Talent te acompaña en el proceso de dar el siguiente
-paso profesional.
-
+Queremos conocer tu experiencia y tus objetivos.
 </p>
 
 <ul>
 
 <li>Orientación profesional</li>
 
-<li>Mejora de perfil profesional</li>
+<li>Mejora de perfil</li>
 
-<li>Preparación para oportunidades</li>
+<li>Nuevas oportunidades</li>
 
 <li>Conexión con empresas</li>
 
@@ -910,24 +785,37 @@ paso profesional.
 <div class="form-container">
 
 <h3>
-Quiero oportunidades
+Envía tu perfil
 </h3>
 
 <p>
-Déjanos tus datos y cuéntanos qué estás buscando.
+Completa la información y adjunta tu CV.
 </p>
 
 
-<form action="mailto:sos.talento03@gmail.com"
-method="post"
-enctype="text/plain">
+<form
+action="https://formsubmit.co/sos.talento03@gmail.com"
+method="POST"
+enctype="multipart/form-data">
 
+
+<input
+type="hidden"
+name="_subject"
+value="SOS Talent - Nuevo perfil profesional">
+
+
+<input
+type="hidden"
+name="_captcha"
+value="true">
+
+
+<div class="form-row">
 
 <div class="form-group">
 
-<label>
-Nombre
-</label>
+<label>Nombre</label>
 
 <input
 type="text"
@@ -940,9 +828,22 @@ required>
 
 <div class="form-group">
 
-<label>
-Correo electrónico
-</label>
+<label>Apellido</label>
+
+<input
+type="text"
+name="Apellido"
+placeholder="Tu apellido"
+required>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Correo electrónico</label>
 
 <input
 type="email"
@@ -955,31 +856,57 @@ required>
 
 <div class="form-group">
 
-<label>
-¿Qué estás buscando?
-</label>
+<label>Teléfono</label>
 
-<select name="Interés">
+<input
+type="tel"
+name="Telefono"
+placeholder="Tu teléfono">
 
-<option>
-Nueva oportunidad laboral
-</option>
+</div>
 
-<option>
-Orientación profesional
-</option>
 
-<option>
-Mejorar mi perfil
-</option>
+<div class="form-group">
 
-<option>
-Consultoría
-</option>
+<label>Ciudad / Estado</label>
 
-<option>
-Otra
-</option>
+<input
+type="text"
+name="Ubicacion"
+placeholder="Ej. Paterson, NJ">
+
+</div>
+
+
+<div class="form-group">
+
+<label>Área profesional</label>
+
+<input
+type="text"
+name="Area"
+placeholder="Ej. Recursos Humanos">
+
+</div>
+
+
+<div class="form-group">
+
+<label>¿Qué estás buscando?</label>
+
+<select name="Tipo_de_oportunidad">
+
+<option>Nueva oportunidad laboral</option>
+
+<option>Cambio de empleo</option>
+
+<option>Orientación profesional</option>
+
+<option>Mejorar mi perfil</option>
+
+<option>Consultoría</option>
+
+<option>Otra</option>
 
 </select>
 
@@ -988,14 +915,28 @@ Otra
 
 <div class="form-group">
 
-<label>
-Cuéntanos un poco más
-</label>
+<label>Mensaje</label>
 
 <textarea
 name="Mensaje"
-placeholder="Escribe aquí..."
-></textarea>
+placeholder="Cuéntanos brevemente sobre ti y lo que buscas..."></textarea>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Adjunta tu CV</label>
+
+<input
+type="file"
+name="CV"
+accept=".pdf,.doc,.docx"
+required>
+
+<div class="file-note">
+PDF, DOC o DOCX · Máximo 10 MB
+</div>
 
 </div>
 
@@ -1004,15 +945,24 @@ placeholder="Escribe aquí..."
 type="submit"
 class="submit-button">
 
-Enviar información
+Enviar mi perfil
 
 </button>
+
+
+<div class="privacy">
+
+Al enviar este formulario, autorizas a SOS Talent
+a utilizar la información proporcionada para
+responder a tu solicitud y evaluar oportunidades
+profesionales.
+
+</div>
 
 
 </form>
 
 </div>
-
 
 </div>
 
@@ -1020,9 +970,7 @@ Enviar información
 
 
 
-<!-- =========================
-     EMPRESAS
-========================= -->
+<!-- EMPRESAS -->
 
 <section class="section dark" id="empresas">
 
@@ -1034,8 +982,8 @@ Enviar información
 
 <p>
 
-Las personas correctas pueden transformar un equipo.
-Cuéntanos qué necesita tu empresa.
+Cuéntanos qué necesita tu empresa y exploremos
+cómo podemos ayudarte.
 
 </p>
 
@@ -1048,13 +996,14 @@ Cuéntanos qué necesita tu empresa.
 <div class="info-box">
 
 <h3>
-Para empresas
+Soluciones para empresas
 </h3>
 
 <p>
 
-Trabajamos contigo para entender tus necesidades
-y encontrar soluciones relacionadas con talento y personas.
+Trabajamos para entender las necesidades de tu
+organización y encontrar soluciones relacionadas
+con talento y personas.
 
 </p>
 
@@ -1062,7 +1011,7 @@ y encontrar soluciones relacionadas con talento y personas.
 
 <li>Búsqueda de talento</li>
 
-<li>Consultoría de recursos humanos</li>
+<li>Consultoría de RRHH</li>
 
 <li>Desarrollo de equipos</li>
 
@@ -1079,24 +1028,34 @@ y encontrar soluciones relacionadas con talento y personas.
 <div class="form-container">
 
 <h3>
-Quiero hablar con SOS Talent
+Hablemos de tu empresa
 </h3>
 
 <p>
-Cuéntanos sobre tu empresa y qué necesitas.
+Cuéntanos qué necesitas.
 </p>
 
 
-<form action="mailto:sos.talento03@gmail.com"
-method="post"
-enctype="text/plain">
+<form
+action="https://formsubmit.co/sos.talento03@gmail.com"
+method="POST">
+
+
+<input
+type="hidden"
+name="_subject"
+value="SOS Talent - Solicitud de empresa">
+
+
+<input
+type="hidden"
+name="_captcha"
+value="true">
 
 
 <div class="form-group">
 
-<label>
-Empresa
-</label>
+<label>Empresa</label>
 
 <input
 type="text"
@@ -1107,15 +1066,15 @@ required>
 </div>
 
 
+<div class="form-row">
+
 <div class="form-group">
 
-<label>
-Nombre de contacto
-</label>
+<label>Nombre</label>
 
 <input
 type="text"
-name="Contacto"
+name="Nombre"
 placeholder="Tu nombre"
 required>
 
@@ -1124,9 +1083,21 @@ required>
 
 <div class="form-group">
 
-<label>
-Correo electrónico
-</label>
+<label>Cargo</label>
+
+<input
+type="text"
+name="Cargo"
+placeholder="Tu cargo">
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label>Correo electrónico</label>
 
 <input
 type="email"
@@ -1139,27 +1110,31 @@ required>
 
 <div class="form-group">
 
-<label>
-¿Qué necesitas?
-</label>
+<label>Teléfono</label>
+
+<input
+type="tel"
+name="Telefono"
+placeholder="Tu teléfono">
+
+</div>
+
+
+<div class="form-group">
+
+<label>¿Qué necesitas?</label>
 
 <select name="Servicio">
 
-<option>
-Búsqueda de talento
-</option>
+<option>Búsqueda de talento</option>
 
-<option>
-Consultoría de RRHH
-</option>
+<option>Consultoría de Recursos Humanos</option>
 
-<option>
-Desarrollo de equipos
-</option>
+<option>Desarrollo de equipos</option>
 
-<option>
-Otra solución
-</option>
+<option>Asesoría profesional</option>
+
+<option>Otra solución</option>
 
 </select>
 
@@ -1168,14 +1143,11 @@ Otra solución
 
 <div class="form-group">
 
-<label>
-Mensaje
-</label>
+<label>Mensaje</label>
 
 <textarea
 name="Mensaje"
-placeholder="Cuéntanos brevemente qué necesitas..."
-></textarea>
+placeholder="Cuéntanos sobre tu necesidad..."></textarea>
 
 </div>
 
@@ -1184,15 +1156,23 @@ placeholder="Cuéntanos brevemente qué necesitas..."
 type="submit"
 class="submit-button">
 
-Contactar a SOS Talent
+Solicitar información
 
 </button>
+
+
+<div class="privacy">
+
+La información enviada será utilizada únicamente
+para responder a tu solicitud y establecer contacto
+relacionado con los servicios de SOS Talent.
+
+</div>
 
 
 </form>
 
 </div>
-
 
 </div>
 
@@ -1200,9 +1180,7 @@ Contactar a SOS Talent
 
 
 
-<!-- =========================
-     SOBRE SOS TALENT
-========================= -->
+<!-- SOBRE NOSOTROS -->
 
 <section class="section white">
 
@@ -1218,11 +1196,16 @@ Más que encontrar un trabajo.
 En SOS Talent creemos que una oportunidad profesional
 puede ser el comienzo de una nueva etapa.
 
-Nuestro propósito es crear conexiones entre talento,
-personas y empresas de una manera cercana, práctica
-y humana.
+</p>
+
+
+<p>
+
+Conectamos talento, experiencia y oportunidades de
+una manera cercana, práctica y humana.
 
 </p>
+
 
 <p>
 
@@ -1237,11 +1220,9 @@ Y detrás de cada empresa hay un equipo que puede crecer.
 
 
 
-<!-- =========================
-     CONTACTO Y REDES
-========================= -->
+<!-- CONTACTO -->
 
-<section class="section contact" id="contacto">
+<section class="section contact black" id="contacto">
 
 <div class="section-title">
 
@@ -1251,9 +1232,7 @@ Hablemos
 
 <p>
 
-¿Tienes una pregunta, buscas una oportunidad o necesitas
-talento para tu empresa?
-
+¿Buscas una oportunidad? ¿Necesitas talento?
 Estamos aquí para escucharte.
 
 </p>
@@ -1270,6 +1249,17 @@ sos.talento03@gmail.com
 
 <div class="socials">
 
+
+<a
+href="https://www.instagram.com/sostalenthr/"
+target="_blank"
+class="social-button">
+
+◎ Instagram
+
+</a>
+
+
 <a
 href="mailto:sos.talento03@gmail.com"
 class="social-button">
@@ -1280,18 +1270,9 @@ class="social-button">
 
 
 <!--
-Cuando tengamos el enlace de Instagram,
-reemplazaremos "#" por la dirección de tu cuenta.
+LinkedIn se agregará cuando tengamos
+el enlace oficial de SOS Talent.
 -->
-
-<a
-href="#"
-class="social-button">
-
-◎ Instagram
-
-</a>
-
 
 <a
 href="#"
@@ -1310,23 +1291,17 @@ in LinkedIn
 
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
 <p>
-
 <strong>SOS Talent</strong>
-
 </p>
-
 
 <p>
 Tu próxima oportunidad comienza aquí.
 </p>
-
 
 <p>
 © 2026 SOS Talent · Todos los derechos reservados.
@@ -1336,5 +1311,4 @@ Tu próxima oportunidad comienza aquí.
 
 
 </body>
-
 </html>
