@@ -1,18 +1,1231 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SOS Talent | Tu próxima oportunidad</title>
+  <title>SOS Talent | Conectamos talento con oportunidades</title>
 
-<style>
+  <meta name="description" content="SOS Talent conecta profesionales con oportunidades, ayuda a crear y actualizar currículums y apoya a empresas en la búsqueda de talento.">
 
-:root {
-    --black: #111111;
-    --black2: #191919;
-    --gold: #D9B44A;
-    --gold2: #F1D477;
-    --white: #FFFFFF;
-    --gray: #CFCFCF;
-    
+  <style>
+    :root {
+      --black: #111111;
+      --black2: #191919;
+      --gold: #D9B44A;
+      --gold2: #F1D477;
+      --white: #FFFFFF;
+      --gray: #CFCFCF;
+      --darkgray: #888888;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      background: var(--black);
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .logo-circle {
+      width: 43px;
+      height: 43px;
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--gray);
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .nav-button {
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 8px 14px;
+      border-radius: 20px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at top right, rgba(217,180,74,0.12), transparent 35%),
+        var(--black);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: auto;
+      padding: 70px 0;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 30px;
+      padding: 7px 15px;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: var(--gray);
+      font-size: 18px;
+      max-width: 650px;
+      margin: auto auto 32px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 30px;
+      font-weight: bold;
+      border: 1px solid var(--gold);
+      transition: 0.3s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold2);
+    }
+
+    .btn-outline {
+      color: var(--gold);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* SERVICES */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--black2);
+      border: 1px solid #333;
+      border-radius: 18px;
+      padding: 27px 22px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .card:first-child {
+      border-color: var(--gold);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(217,180,74,0.12),
+          var(--black2)
+        );
+    }
+
+    .card-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .card-number {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+    }
+
+    .card h3 {
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* FORMS */
+
+    .form-section {
+      background: #151515;
+    }
+
+    .form-box {
+      max-width: 800px;
+      margin: auto;
+      background: var(--black2);
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 30px;
+    }
+
+    .form-box h3 {
+      color: var(--gold);
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .form-box > p {
+      color: var(--gray);
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--gray);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      background: #101010;
+      color: white;
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .submit {
+      border: none;
+      background: var(--gold);
+      color: var(--black);
+      padding: 14px 22px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit:hover {
+      background: var(--gold2);
+    }
+
+    .privacy {
+      font-size: 12px;
+      color: var(--darkgray);
+      text-align: center;
+    }
+
+    /* ABOUT */
+
+    .about {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about p {
+      color: var(--gray);
+      font-size: 17px;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      text-align: center;
+      background: var(--black2);
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 40px 25px;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .contact-box p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid #333;
+      padding: 30px 0;
+      text-align: center;
+      color: var(--darkgray);
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 950px) {
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 800px) {
+
+      nav {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .hero {
+        min-height: 75vh;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .form-box {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="#inicio" class="logo">
+        <div class="logo-circle">SOS</div>
+        <span>SOS Talent</span>
+      </a>
+
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#profesionales">Profesionales</a>
+        <a href="#empresas">Empresas</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto" class="nav-button">Contacto</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
+
+      <div class="hero-badge">
+        TALENTO · OPORTUNIDADES · CONEXIÓN
+      </div>
+
+      <h1>
+        Tu próxima <span>oportunidad</span><br>
+        comienza aquí.
+      </h1>
+
+      <p>
+        Conectamos profesionales con oportunidades y ayudamos a las empresas
+        a encontrar el talento que necesitan.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#profesionales" class="btn btn-gold">
+          Busco oportunidades
+        </a>
+
+        <a href="#empresas" class="btn btn-outline">
+          Soy empresa
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section id="servicios">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>Nuestros servicios</h2>
+
+        <p>
+          Acompañamos a profesionales y empresas en diferentes etapas
+          del proceso de conexión laboral.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+        <!-- SERVICE 1 -->
+
+        <div class="card">
+
+          <div class="card-number">
+            SERVICIO 01
+          </div>
+
+          <div class="card-icon">
+            📄
+          </div>
+
+          <h3>
+            Creación y actualización de Currículum
+          </h3>
+
+          <p>
+            Creamos o actualizamos tu Currículum en
+            <strong>español o inglés</strong>, resaltando tu experiencia,
+            habilidades y fortalezas profesionales.
+          </p>
+
+        </div>
+
+
+        <!-- SERVICE 2 -->
+
+        <div class="card">
+
+          <div class="card-number">
+            SERVICIO 02
+          </div>
+
+          <div class="card-icon">
+            👩‍💼
+          </div>
+
+          <h3>
+            Orientación profesional
+          </h3>
+
+          <p>
+            Te ayudamos a identificar oportunidades alineadas con
+            tu experiencia, intereses y objetivos profesionales.
+          </p>
+
+        </div>
+
+
+        <!-- SERVICE 3 -->
+
+        <div class="card">
+
+          <div class="card-number">
+            SERVICIO 03
+          </div>
+
+          <div class="card-icon">
+            🏢
+          </div>
+
+          <h3>
+            Soluciones para empresas
+          </h3>
+
+          <p>
+            Apoyamos a las empresas en la búsqueda y conexión
+            con profesionales de acuerdo con sus necesidades.
+          </p>
+
+        </div>
+
+
+        <!-- SERVICE 4 -->
+
+        <div class="card">
+
+          <div class="card-number">
+            SERVICIO 04
+          </div>
+
+          <div class="card-icon">
+            🤝
+          </div>
+
+          <h3>
+            Conexión de talento
+          </h3>
+
+          <p>
+            Facilitamos el encuentro entre profesionales y empresas
+            para crear nuevas oportunidades y relaciones de valor.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROFESSIONALS -->
+
+  <section class="form-section" id="profesionales">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>¿Buscas una oportunidad?</h2>
+
+        <p>
+          Cuéntanos un poco sobre ti. No necesitas enviar tu CV todavía.
+          Nos pondremos en contacto contigo para conocer mejor tu perfil.
+        </p>
+
+      </div>
+
+
+      <div class="form-box">
+
+        <h3>
+          Déjanos tus datos
+        </h3>
+
+        <p>
+          Completa este formulario de manera rápida y sencilla.
+        </p>
+
+
+        <form
+          action="https://formsubmit.co/sos.talent03@gmail.com"
+          method="POST">
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="SOS Talent - Nuevo contacto profesional">
+
+          <input
+            type="hidden"
+            name="_captcha"
+            value="true">
+
+
+          <div class="form-row">
+
+            <div>
+
+              <label for="nombre">
+                Nombre *
+              </label>
+
+              <input
+                type="text"
+                id="nombre"
+                name="Nombre"
+                placeholder="Tu nombre"
+                required>
+
+            </div>
+
+
+            <div>
+
+              <label for="apellido">
+                Apellido *
+              </label>
+
+              <input
+                type="text"
+                id="apellido"
+                name="Apellido"
+                placeholder="Tu apellido"
+                required>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <div>
+
+              <label for="email">
+                Correo electrónico *
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="Email"
+                placeholder="tu@email.com"
+                required>
+
+            </div>
+
+
+            <div>
+
+              <label for="telefono">
+                Teléfono
+              </label>
+
+              <input
+                type="tel"
+                id="telefono"
+                name="Telefono"
+                placeholder="Tu teléfono">
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <label for="area">
+              Área profesional *
+            </label>
+
+            <select
+              id="area"
+              name="Area profesional"
+              required>
+
+              <option value="">
+                Selecciona una opción
+              </option>
+
+              <option>
+                Administración
+              </option>
+
+              <option>
+                Recursos Humanos
+              </option>
+
+              <option>
+                Servicio al cliente
+              </option>
+
+              <option>
+                Ventas
+              </option>
+
+              <option>
+                Marketing
+              </option>
+
+              <option>
+                Finanzas
+              </option>
+
+              <option>
+                Tecnología
+              </option>
+
+              <option>
+                Educación
+              </option>
+
+              <option>
+                Salud
+              </option>
+
+              <option>
+                Operaciones
+              </option>
+
+              <option>
+                Otra
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div>
+
+            <label for="oportunidad">
+              ¿Qué estás buscando?
+            </label>
+
+            <select
+              id="oportunidad"
+              name="Tipo de oportunidad">
+
+              <option value="">
+                Selecciona una opción
+              </option>
+
+              <option>
+                Empleo
+              </option>
+
+              <option>
+                Trabajo remoto
+              </option>
+
+              <option>
+                Trabajo presencial
+              </option>
+
+              <option>
+                Trabajo híbrido
+              </option>
+
+              <option>
+                Creación o actualización de Currículum
+              </option>
+
+              <option>
+                Orientación profesional
+              </option>
+
+              <option>
+                Otra
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div>
+
+            <label for="mensaje">
+              Cuéntanos un poco sobre ti
+            </label>
+
+            <textarea
+              id="mensaje"
+              name="Mensaje"
+              placeholder="Experiencia, intereses, tipo de oportunidad que buscas, etc."></textarea>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="submit">
+
+            Enviar mi información
+
+          </button>
+
+
+          <p class="privacy">
+
+            Tu información será utilizada únicamente para fines
+            relacionados con oportunidades y servicios de SOS Talent.
+
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- COMPANIES -->
+
+  <section id="empresas">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          ¿Necesitas talento?
+        </h2>
+
+        <p>
+          Cuéntanos qué necesitas y nos pondremos en contacto contigo
+          para conocer tu empresa y el perfil que buscas.
+        </p>
+
+      </div>
+
+
+      <div class="form-box">
+
+        <h3>
+          Solicitud de talento
+        </h3>
+
+        <p>
+          Déjanos la información básica. Nosotros te contactaremos
+          para conversar sobre la posición.
+        </p>
+
+
+        <form
+          action="https://formsubmit.co/sos.talent03@gmail.com"
+          method="POST">
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="SOS Talent - Solicitud de empresa">
+
+          <input
+            type="hidden"
+            name="_captcha"
+            value="true">
+
+
+          <div class="form-row">
+
+            <div>
+
+              <label for="empresa">
+                Empresa *
+              </label>
+
+              <input
+                type="text"
+                id="empresa"
+                name="Empresa"
+                placeholder="Nombre de la empresa"
+                required>
+
+            </div>
+
+
+            <div>
+
+              <label for="contacto">
+                Persona de contacto *
+              </label>
+
+              <input
+                type="text"
+                id="contacto"
+                name="Persona de contacto"
+                placeholder="Nombre y apellido"
+                required>
+
+            </div>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <div>
+
+              <label for="emailEmpresa">
+                Correo electrónico *
+              </label>
+
+              <input
+                type="email"
+                id="emailEmpresa"
+                name="Email"
+                placeholder="empresa@email.com"
+                required>
+
+            </div>
+
+
+            <div>
+
+              <label for="telefonoEmpresa">
+                Teléfono
+              </label>
+
+              <input
+                type="tel"
+                id="telefonoEmpresa"
+                name="Telefono"
+                placeholder="Teléfono de contacto">
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <label for="posicion">
+              ¿Qué posición necesitas cubrir?
+            </label>
+
+            <input
+              type="text"
+              id="posicion"
+              name="Posicion"
+              placeholder="Ej. Asistente administrativo">
+
+          </div>
+
+
+          <div>
+
+            <label for="cantidad">
+              Número de posiciones
+            </label>
+
+            <select
+              id="cantidad"
+              name="Numero de posiciones">
+
+              <option value="">
+                Selecciona
+              </option>
+
+              <option>
+                1
+              </option>
+
+              <option>
+                2-3
+              </option>
+
+              <option>
+                4-5
+              </option>
+
+              <option>
+                Más de 5
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div>
+
+            <label for="mensajeEmpresa">
+              Cuéntanos qué necesitas
+            </label>
+
+            <textarea
+              id="mensajeEmpresa"
+              name="Mensaje"
+              placeholder="Cuéntanos brevemente sobre la posición o el talento que buscas."></textarea>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="submit">
+
+            Solicitar talento
+
+          </button>
+
+
+          <p class="privacy">
+
+            Tu información será utilizada únicamente para
+            atender tu solicitud.
+
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="nosotros">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          Sobre SOS Talent
+        </h2>
+
+      </div>
+
+
+      <div class="about">
+
+        <p>
+
+          En
+          <span class="highlight">
+            SOS Talent
+          </span>
+          creemos que detrás de cada oportunidad existe una persona
+          con talento, experiencia y potencial.
+
+        </p>
+
+
+        <p>
+
+          Nuestro propósito es facilitar conexiones profesionales
+          de manera cercana, humana y estratégica.
+
+        </p>
+
+
+        <p>
+
+          Queremos ser un punto de encuentro entre quienes buscan
+          nuevas oportunidades y las empresas que buscan talento.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contacto">
+
+    <div class="container">
+
+      <div class="contact-box">
+
+        <div
+          class="section-title"
+          style="margin-bottom: 20px;">
+
+          <h2>
+            Hablemos
+          </h2>
+
+          <p>
+            ¿Tienes una pregunta o quieres conocer más sobre SOS Talent?
+          </p>
+
+        </div>
+
+
+        <a
+          href="mailto:sos.talent03@gmail.com"
+          class="btn btn-gold">
+
+          Enviar un correo
+
+        </a>
+
+
+        <div class="social">
+
+          <a
+            href="https://www.instagram.com/sostalenthr/"
+            target="_blank"
+            class="btn btn-outline">
+
+            Instagram @sostalenthr
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <p>
+        © 2026 SOS Talent. Todos los derechos reservados.
+      </p>
+
+      <p>
+        Talento · Oportunidades · Conexión
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
