@@ -1,61 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="SOS Talent — soluciones profesionales para empleo y talento.">
-<title>SOS Talent | Tu próxima oportunidad comienza aquí</title>
-<style>
-:root{--ink:#18231f;--muted:#66716c;--sage:#a9b8a8;--sage2:#dfe7de;--cream:#f7f5ef;--white:#fff;--gold:#b59a67;--line:#e6e5df}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.55}a{text-decoration:none;color:inherit}
-.wrap{max-width:1120px;margin:auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:10;background:#f7f5eff2;border-bottom:1px solid var(--line)}
-.navin{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.15em}.brand span{font-weight:400;color:var(--gold)}
-.navlinks{display:flex;gap:24px;font-size:14px}.navcta,.btn{border-radius:999px;padding:12px 18px;font-weight:800}.navcta,.primary{background:var(--ink);color:#fff}
-.hero{padding:85px 0 70px;background:linear-gradient(135deg,#f7f5ef,#edf2eb 60%,#dfe7de)}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
-.eyebrow,.kicker{text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:800;color:#718078}
-h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(45px,6vw,76px);line-height:1.02;margin:15px 0 22px}.hero p{font-size:19px;color:var(--muted);max-width:620px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;border:1px solid var(--ink)}.secondary{background:transparent}
-.card-art{background:white;border:1px solid var(--line);border-radius:28px;padding:25px;box-shadow:0 20px 50px #18231f17}.paper{border:1px solid #dddcd4;border-radius:16px;padding:24px}.paper-top{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:15px}.paper-name{font:600 25px Georgia,serif}.pill{font-size:10px;background:var(--sage2);padding:7px 10px;border-radius:99px}.bar{height:8px;background:#e9ebe7;border-radius:10px;margin:12px 0}.short{width:60%}.mid{width:78%}
-.section{padding:80px 0}.alt{background:#fff}.center{text-align:center;max-width:700px;margin:0 auto 40px}.section h2{font:500 43px Georgia,serif;margin:10px 0}.muted{color:var(--muted)}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{background:#fff;border:1px solid var(--line);border-radius:22px;padding:27px;display:flex;flex-direction:column;min-height:320px}.featured{border:2px solid var(--ink);position:relative}.tag{position:absolute;right:16px;top:16px;background:var(--ink);color:white;border-radius:99px;padding:5px 9px;font-size:10px;font-weight:800}.service h3{font-size:21px;margin:15px 0 5px}.price{font-size:34px;font-weight:800;margin:10px 0}.service ul{padding-left:20px;flex:1;color:var(--muted)}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.step{padding:20px;border-top:2px solid var(--sage)}.num{font-weight:800;color:var(--gold)}
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:center}.quote{font:500 31px/1.25 Georgia,serif}.badge{display:inline-block;padding:8px 12px;border:1px solid #cfd7ce;border-radius:999px;margin:4px;font-size:13px}
-.cta{background:var(--ink);color:#fff;border-radius:30px;padding:50px}.cta h2{color:white}.cta p{color:#cbd3ce}.cta .btn{background:white;color:var(--ink);border-color:white}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}.contactbox{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px}.contactbox input,.contactbox textarea{width:100%;padding:13px;margin:7px 0 12px;border:1px solid #d9dcd8;border-radius:12px;font:inherit}.contactbox textarea{min-height:120px}
-footer{padding:35px 0;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}.foot{display:flex;justify-content:space-between}
-@media(max-width:800px){.navlinks{display:none}.hero-grid,.about,.contact{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.hero{padding-top:55px}.card-art{order:-1}}
-@media(max-width:480px){.steps{grid-template-columns:1fr}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS Talent</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f7f4;
+            color: #333;
+        }
+
+        header {
+            background: white;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2f5d50;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 90px 8%;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            color: #2f5d50;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: #2f5d50;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .services {
+            background: white;
+            padding: 60px 8%;
+        }
+
+        .services h2 {
+            text-align: center;
+            color: #2f5d50;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .card {
+            width: 280px;
+            padding: 30px;
+            background: #f8f7f4;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #2f5d50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #2f5d50;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-<nav><div class="wrap navin"><a class="brand" href="#inicio">SOS <span>TALENT</span></a><div class="navlinks"><a href="#servicios">Servicios</a><a href="#proceso">Cómo funciona</a><a href="#empresas">Empresas</a><a href="#contacto">Contacto</a></div><a class="navcta" href="#servicios">Ver servicios</a></div></nav>
 
-<header id="inicio" class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Career & Talent Solutions</div><h1>Tu próxima oportunidad comienza aquí.</h1><p>Impulsamos tu búsqueda de empleo con una presentación profesional de tu experiencia, tu CV y tu perfil laboral.</p><div class="actions"><a class="btn primary" href="#servicios">Quiero mejorar mi CV</a><a class="btn secondary" href="#contacto">Hablar con SOS Talent</a></div></div>
-<div class="card-art"><div class="paper"><div class="paper-top"><div><div class="paper-name">Tu próximo CV</div><small>Presentación profesional</small></div><div class="pill">SOS Talent</div></div><div style="margin-top:20px"><div class="bar mid"></div><div class="bar short"></div><div class="bar"></div><div class="bar mid"></div><div class="bar short"></div></div><small>EXPERIENCIA</small><div class="bar mid"></div><div class="bar"></div></div></div></div></header>
+<header>
+    <div class="logo">SOS Talent</div>
 
-<section id="servicios" class="section"><div class="wrap"><div class="center"><div class="kicker">Para candidatos</div><h2>Presenta tu experiencia con intención.</h2><p class="muted">Servicios claros para ayudarte a dar el siguiente paso profesional.</p></div>
-<div class="grid3">
-<article class="service"><div class="kicker">Esencial</div><h3>CV Profesional</h3><div class="price">$35</div><ul><li>Revisión y corrección</li><li>Redacción profesional</li><li>Organización y formato</li><li>Enfoque según el puesto</li><li>Entrega en PDF</li><li>1 ronda de cambios</li></ul><a class="btn primary" href="#contacto" onclick="selectService('CV Profesional — $35')">Solicitar</a></article>
-<article class="service featured"><div class="tag">MÁS ELEGIDO</div><div class="kicker">Completo</div><h3>CV + Carta</h3><div class="price">$50</div><ul><li>Todo lo incluido en CV Profesional</li><li>Carta de presentación personalizada</li><li>Adaptada al puesto objetivo</li><li>Entrega digital</li></ul><a class="btn primary" href="#contacto" onclick="selectService('CV + Carta — $50')">Solicitar</a></article>
-<article class="service"><div class="kicker">Proyección</div><h3>CV + LinkedIn + Orientación</h3><div class="price">$75</div><ul><li>CV profesional</li><li>Optimización de LinkedIn</li><li>Orientación para búsqueda</li><li>Recomendaciones para entrevistas</li></ul><a class="btn primary" href="#contacto" onclick="selectService('CV + LinkedIn + Orientación — $75')">Solicitar</a></article>
-</div><p style="font-size:12px;color:#66716c;text-align:center;margin-top:18px">Los servicios de SOS Talent son de preparación y orientación profesional; no garantizan una contratación.</p></div></section>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
 
-<section id="proceso" class="section alt"><div class="wrap"><div class="center"><div class="kicker">Simple y directo</div><h2>Así funciona.</h2><p class="muted">Sin complicaciones. Tú nos cuentas dónde quieres llegar y nosotros trabajamos en tu presentación profesional.</p></div><div class="steps"><div class="step"><div class="num">01</div><h3>Elige tu servicio</h3><p class="muted">Selecciona el paquete que necesitas.</p></div><div class="step"><div class="num">02</div><h3>Cuéntanos sobre ti</h3><p class="muted">Recopilamos experiencia, objetivos y puesto de interés.</p></div><div class="step"><div class="num">03</div><h3>Trabajamos tu perfil</h3><p class="muted">Organizamos tu información de manera profesional.</p></div><div class="step"><div class="num">04</div><h3>Recibes tu documento</h3><p class="muted">Entrega digital y una ronda de cambios incluida.</p></div></div></div></section>
+<section class="hero" id="inicio">
+    <h1>Tu próxima oportunidad comienza aquí.</h1>
 
-<section id="empresas" class="section"><div class="wrap about"><div><div class="kicker">Para empresas</div><div class="quote">“Encontrar talento también requiere una estrategia.”</div></div><div><p class="muted">SOS Talent puede apoyar a empresas que necesitan fortalecer sus procesos de talento y selección.</p><span class="badge">Reclutamiento</span><span class="badge">Selección</span><span class="badge">Consultoría de RR. HH.</span><span class="badge">Talent sourcing</span><div class="actions"><a class="btn primary" href="#contacto">Solicitar información</a></div></div></div></section>
+    <p>
+        Conectamos talento con oportunidades y ayudamos a empresas
+        y profesionales a encontrar el camino adecuado para crecer.
+    </p>
 
-<section class="section alt"><div class="wrap"><div class="cta"><div class="kicker" style="color:#bfc9c2">SOS TALENT</div><h2>¿Listo para tu próxima oportunidad?</h2><p>Empieza por presentar tu experiencia de una forma que refleje tu valor profesional.</p><a class="btn" href="#contacto">Quiero mi CV</a></div></div></section>
+    <a href="#servicios" class="button">
+        Conoce nuestros servicios
+    </a>
+</section>
 
-<section id="contacto" class="section"><div class="wrap contact"><div><div class="kicker">Contacto</div><h2>Empecemos.</h2><p class="muted">Completa el formulario y SOS Talent se pondrá en contacto contigo para indicarte los próximos pasos.</p><p><strong>Email:</strong> reemplazar-con-email-real</p><p><strong>Instagram:</strong> @sostalent</p><p style="font-size:12px;color:#66716c">Antes de publicar, sustituye el email y usuario de Instagram por los datos reales de SOS Talent.</p></div>
-<div class="contactbox"><form onsubmit="sendForm(event)"><label>Nombre</label><input required id="name" placeholder="Tu nombre"><label>Email</label><input required type="email" id="email" placeholder="tu@email.com"><label>Servicio</label><input id="service" placeholder="Ej. CV Profesional — $35"><label>Mensaje</label><textarea id="message" placeholder="¿Qué necesitas?"></textarea><button class="btn primary" type="submit" style="width:100%;cursor:pointer">Enviar solicitud</button><div id="status" style="font-size:12px;color:#66716c;margin-top:10px"></div></form></div></div></section>
-<footer><div class="wrap foot"><div><strong>SOS TALENT</strong> · Career & Talent Solutions</div><div>© 2026 SOS Talent</div></div></footer>
-<script>
-function selectService(s){document.getElementById('service').value=s}
-function sendForm(e){e.preventDefault();const n=document.getElementById('name').value,em=document.getElementById('email').value,s=document.getElementById('service').value,m=document.getElementById('message').value;const body=encodeURIComponent(`Nombre: ${n}
-Email: ${em}
-Servicio: ${s}
-Mensaje: ${m}`);window.location.href=`mailto:reemplazar-con-email-real?subject=Solicitud%20SOS%20Talent&body=${body}`;document.getElementById('status').textContent='Se abrirá tu correo para enviar la solicitud.'}
-</script>
+<section class="services" id="servicios">
+
+    <h2>¿Cómo podemos ayudarte?</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Para quienes buscan trabajo</h3>
+            <p>
+                Orientación para mejorar tu perfil profesional,
+                prepararte para oportunidades y encontrar tu próximo paso.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Para empresas</h3>
+            <p>
+                Apoyo en búsqueda de talento y soluciones para
+                fortalecer sus equipos.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Consultoría</h3>
+            <p>
+                Asesoría en recursos humanos, desarrollo profesional
+                y estrategias de talento.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer id="contacto">
+    <p>© 2026 SOS Talent</p>
+</footer>
+
 </body>
 </html>
